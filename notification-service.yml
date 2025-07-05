@@ -18,8 +18,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: rolandantwi68@gmail.com
-    password: banko1234
+    username: "rolandantwi68@gmail.com"
+    password: "banko1234"
     properties:
       mail:
         smtp:
@@ -31,4 +31,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
