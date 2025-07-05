@@ -7,10 +7,24 @@ spring:
     username: root
     password: banko1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+  
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+  
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: restaurant-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: org.sikawofie.restaurantservice.event.OrderPlacedEvent
+        spring.json.use.type.headers: false
+        spring.json.ignore.unknown.properties: true
 
 eureka:
   client:
