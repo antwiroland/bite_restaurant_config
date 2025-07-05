@@ -14,6 +14,9 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
+        spring.json.value.default.type: org.sikawofie.notificationservice.event.OrderPlacedEvent
+        spring.json.use.type.headers: false  # Critical fix
+        spring.json.ignore.unknown.properties: true  # Allow unknown properties
 
   mail:
     host: smtp.gmail.com
